@@ -34,11 +34,21 @@ This model was made to be submitted to the Kaggle competition “Birds! Are they
 
 ### Dataset
 
-As this was for a Kaggle competition, this model used the dataset provided through the Kaggle site, under the /train/ folder. This folder was pre-organized into sub-folders, each containing a specific species of bird. This was in the format needed to process this data into a dataset using PyTorch’s dataset.ImageFolder function.  The only other preprocessing that was needed was splitting the dataset into an 80/20 train/test split.  
+As this was for a Kaggle competition, this model used the dataset provided through the Kaggle site, under the /train/ folder. This folder was pre-organized into sub-folders, each containing a specific species of bird. This was in the format needed to process this data into a dataset using PyTorch’s dataset.ImageFolder function. The dataset was separated into an 80/20 train/test split, along with being resized to 224 x 224 images in order to match the size of the images ResNet was trained on.
 
 ### Techniques
 
-This model was primarily a modification of ResNet50, provided through the torchvision library. After testing nine separate combinations of learning rate (0.001, 0.01, 0.1) and decay (0.0005, 0.005, 0.05), the most promising combination was a learning rate of __ and decay of __, due to ___.
+This model was primarily a modification of ResNet50 using pretrained weights as a starting point, provided through the torchvision library. The ResNet50 model was modified by stripping the last layer and appending a Linear layer with an output dimension of 555, matching the number of bird classes. I began training without data augmentation or using weight decay.  This resulted in a stark contrast between training accuracy and testing accuracy (0.93 and 0.55 after 30 epochs). In order to fix this apparent overfitting, I chose to add data augmentation by taking random 112 x 112 crops and performing random horizontal flips on the training data, along with normalizing the entire dataset around 0.5 for all three channels.  I also added a weight decay of 0.0005.
+
+To find the optimal learning rate, I chose to use the fastai Learner class and run the lr_find() function after every 5 epochs of training. This function provides a suggestion for the best learning rate given the model's current state and the weight decay. This manual annealing yielded the following learning rates:
+
+Epochs 1-5: 0.0025
+
+![1-5](https://user-images.githubusercontent.com/36826929/158666067-5d6f6eb9-3179-4bc0-9a04-b370771d705c.png)
+
+Epochs 6-10:
+Epochs 11-15:
+
 
 ### Additional Info
 
