@@ -40,13 +40,38 @@ As this was for a Kaggle competition, this model used the dataset provided throu
 
 This model was primarily a modification of ResNet50 using pretrained weights as a starting point, provided through the torchvision library. The ResNet50 model was modified by stripping the last layer and appending a Linear layer with an output dimension of 555, matching the number of bird classes. I began training without data augmentation or using weight decay.  This resulted in a stark contrast between training accuracy and testing accuracy (0.93 and 0.55 after 30 epochs). In order to fix this apparent overfitting, I chose to add data augmentation by taking random 112 x 112 crops and performing random horizontal flips on the training data, along with normalizing the entire dataset around 0.5 for all three channels.  I also added a weight decay of 0.0005.
 
-To find the optimal learning rate, I chose to use the fastai Learner class and run the lr_find() function after every 5 epochs of training. This function provides a suggestion for the best learning rate given the model's current state and the weight decay. This manual annealing yielded the following learning rates:
+To find the optimal learning rate, I chose to use the fastai Learner class and run the lr_find() function after every 5 epochs of training. This function provides a suggestion for the best learning rate given the model's current state and the weight decay. This manual annealing yielded the following results:
 
-Epochs 1-5: 0.0025
+*Epochs 1-5*
 
+Learning Rate Suggestion Graph, given by lr_find():
 ![1-5](https://user-images.githubusercontent.com/36826929/158666067-5d6f6eb9-3179-4bc0-9a04-b370771d705c.png)
 
+Learning Rate: 0.0025
+Beginning Loss: 0.064
+End Loss: ~0.028
+End Training Accuracy: 0.398
+End Testing Accuracy: 0.336
+
+Loss over epochs (blue=training, orange=validation)
+
+![1-5 loss](https://user-images.githubusercontent.com/36826929/158667908-ed28fc19-7130-4e4f-abb2-48326a1ad6ae.png)
+
 Epochs 6-10:
+
+Learning Rate Suggestion Graph, given by lr_find():
+![6-10](https://user-images.githubusercontent.com/36826929/158668095-d66f0882-d542-4916-a26e-12d4e9332cd5.png)
+
+Learning Rate: 0.00001
+Beginning Loss: 0.028
+End Loss: 
+End Training Accuracy: 
+End Testing Accuracy: 
+
+Loss over epochs (blue=training, orange=validation)
+
+![1-5 loss](https://user-images.githubusercontent.com/36826929/158667908-ed28fc19-7130-4e4f-abb2-48326a1ad6ae.png)
+
 Epochs 11-15:
 
 
@@ -55,7 +80,12 @@ Epochs 11-15:
 
 ### References
 
-https://www.pluralsight.com/guides/introduction-to-resnet
+https://www.pluralsight.com/guides/introduction-to-resnet (used to strip ResNet of its last layers)
+
+Joe Redmon's CNN PyTorch tutorial (used for training function and data augmentation code).
+
+https://towardsdatascience.com/estimating-optimal-learning-rate-for-a-deep-neural-network-ce32f2556ce0 (used to find the optimal LR using fastai)
+
 
 
 For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
@@ -67,3 +97,4 @@ Your Pages site will use the layout and styles from the Jekyll theme you have se
 ### Support or Contact
 
 Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+
