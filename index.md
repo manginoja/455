@@ -47,11 +47,11 @@ To find the optimal learning rate, I chose to use the fastai Learner class and r
 Learning Rate Suggestion Graph, given by lr_find():
 ![1-5](https://user-images.githubusercontent.com/36826929/158666067-5d6f6eb9-3179-4bc0-9a04-b370771d705c.png)
 
-Learning Rate: 0.0025 \n
-Beginning Loss: 0.064 \n
-End Loss: ~0.028 \n
-End Training Accuracy: 0.398 \n
-End Testing Accuracy: 0.336
+-Learning Rate: 0.0025 
+-Beginning Loss: 0.064 
+-End Loss: ~0.028 
+-End Training Accuracy: 0.398 
+-End Testing Accuracy: 0.336
 
 Loss over epochs (blue=training, orange=validation)
 
@@ -70,7 +70,7 @@ Epochs 36-65:
 Learning Rate: 0.0005
 Beginning Loss: 0.010
 End Loss: 
-End Training Accuracy: 0.398 \n
+End Training Accuracy: 0.398 
 End Testing Accuracy: 0.336
 
 
