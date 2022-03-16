@@ -28,6 +28,9 @@ Syntax highlighted code block
 
 ```
 ### Summary
+
+This project consists of a bird classification model made for a Kaggle competition.  The model itself is a residual neural network built from a modified ResNet50 model, trained using a variety of machine learning techniques including learning rate annealing, weight decay, and data augmentation.  The dataset that the model was trained and tested on consists of over 38,600 images of 555 different species of birds; the goal of training was to achieve the highest top-1 accuracy on correctly classifying a bird species.  The final model was able to achieve a training accuracy of BLANK on 34,700 files, and a testing accuracy of BLANK on 3,860 files.
+
 ### Problem Setup
 
 This model was made to be submitted to the Kaggle competition “Birds! Are they real?”.  The goal of this competition was to create a model that can classify bird species using the provided images and labels.  The model was then tested on a pre-defined dataset provided through the Kaggle competition, under the folder /test/.  The goal of this model was to provide the highest testing accuracy on this dataset.  
@@ -85,7 +88,7 @@ Joe Redmon's CNN PyTorch tutorial (used for training function and data augmentat
 
 https://towardsdatascience.com/estimating-optimal-learning-rate-for-a-deep-neural-network-ce32f2556ce0 (used to find the optimal LR using fastai)
 
-
+https://docs.fast.ai/tutorial.siamese.html
 
 For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
 
