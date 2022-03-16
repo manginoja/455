@@ -40,7 +40,7 @@ As this was for a Kaggle competition, this model used the dataset provided throu
 
 This model was primarily a modification of ResNet50 using pretrained weights as a starting point, provided through the torchvision library. The ResNet50 model was modified by stripping the last layer and appending a Linear layer with an output dimension of 555, matching the number of bird classes. I began training without data augmentation or using weight decay.  This resulted in a stark contrast between training accuracy and testing accuracy (0.93 and 0.55 after 30 epochs). In order to fix this apparent overfitting, I chose to add data augmentation by taking random 112 x 112 crops and performing random horizontal flips on the training data, along with normalizing the entire dataset around 0.5 for all three channels.  I also added a weight decay of 0.0005.
 
-To find the optimal learning rate, I chose to use the fastai Learner class and run the lr_find() function after every 5 epochs of training. This function provides a suggestion for the best learning rate given the model's current state and the weight decay. This manual annealing yielded the following results:
+To find the optimal learning rate, I chose to use the fastai Learner class and run the lr_find() function before the first epoch of training. This function provides a suggestion for the best learning rate given the model's current state and the weight decay. This yielded the following results:
 
 *Epochs 1-5*
 
@@ -49,30 +49,29 @@ Learning Rate Suggestion Graph, given by lr_find():
 
 Learning Rate: 0.0025 \n
 Beginning Loss: 0.064 \n
-End Loss: ~0.028
-End Training Accuracy: 0.398
+End Loss: ~0.028 \n
+End Training Accuracy: 0.398 \n
 End Testing Accuracy: 0.336
 
 Loss over epochs (blue=training, orange=validation)
 
 ![1-5 loss](https://user-images.githubusercontent.com/36826929/158667908-ed28fc19-7130-4e4f-abb2-48326a1ad6ae.png)
 
-Epochs 6-10:
+Epochs 6-35:
 
-Learning Rate Suggestion Graph, given by lr_find():
-![6-10](https://user-images.githubusercontent.com/36826929/158668095-d66f0882-d542-4916-a26e-12d4e9332cd5.png)
-
-Learning Rate: 0.00001
+Learning Rate: 0.001
 Beginning Loss: 0.028
+End Loss: 0.010
+End Training Accuracy: 0.761
+End Testing Accuracy: 0.539
+
+Epochs 36-65:
+
+Learning Rate: 0.0005
+Beginning Loss: 0.010
 End Loss: 
-End Training Accuracy: 
-End Testing Accuracy: 
-
-Loss over epochs (blue=training, orange=validation)
-
-![1-5 loss](https://user-images.githubusercontent.com/36826929/158667908-ed28fc19-7130-4e4f-abb2-48326a1ad6ae.png)
-
-Epochs 11-15:
+End Training Accuracy: 0.398 \n
+End Testing Accuracy: 0.336
 
 
 ### Additional Info
