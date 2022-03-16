@@ -25,6 +25,8 @@ Syntax highlighted code block
 
 [Link](url) and ![Image](src)
 
+
+```
 ### Summary
 ### Problem Setup
 This model was made to be submitted to the Kaggle competition “Birds! Are they real?”.  The goal of this competition was to create a model that can classify bird species using the provided images and labels.  The model was then tested on a pre-defined dataset provided through the Kaggle competition, under the folder /test/.  The goal of this model was to provide the highest testing accuracy on this dataset.  
@@ -32,7 +34,6 @@ This model was made to be submitted to the Kaggle competition “Birds! Are they
 ### Techniques
 ### Additional Info
 ### References
-```
 
 For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
 
