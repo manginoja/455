@@ -47,8 +47,8 @@ To find the optimal learning rate, I chose to use the fastai Learner class and r
 Learning Rate Suggestion Graph, given by lr_find():
 ![1-5](https://user-images.githubusercontent.com/36826929/158666067-5d6f6eb9-3179-4bc0-9a04-b370771d705c.png)
 
-Learning Rate: 0.0025
-Beginning Loss: 0.064
+Learning Rate: 0.0025 \n
+Beginning Loss: 0.064 \n
 End Loss: ~0.028
 End Training Accuracy: 0.398
 End Testing Accuracy: 0.336
@@ -90,11 +90,4 @@ https://towardsdatascience.com/estimating-optimal-learning-rate-for-a-deep-neura
 
 For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/manginoja/455/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
 
