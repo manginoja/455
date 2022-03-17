@@ -1,32 +1,3 @@
-## Welcome to GitHub Pages
-
-You can use the [editor on GitHub](https://github.com/manginoja/455/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-
-
-```
 ### Summary
 
 This project consists of a bird classification model made for a Kaggle competition.  The model itself is a residual neural network built from a modified ResNet50 model, trained using a variety of machine learning techniques including learning rate annealing, weight decay, and data augmentation.  The dataset that the model was trained and tested on consists of over 38,600 images of 555 different species of birds; the goal of training was to achieve the highest top-1 accuracy on correctly classifying a bird species. The final model was able to achieve a training accuracy of BLANK on 34,700 files, and a testing accuracy of BLANK on 3,860 files.
@@ -48,41 +19,43 @@ To find the optimal learning rate, I chose to use the fastai Learner class and r
 Learning Rate Suggestion Graph, given by lr_find():
 ![1-5](https://user-images.githubusercontent.com/36826929/158666067-5d6f6eb9-3179-4bc0-9a04-b370771d705c.png)
 
-*Epochs 1-5*
-  -Learning Rate: 0.0025 
-  -Beginning Loss: 0.064 
-  -End Loss: ~0.028 
-  -End Training Accuracy: 0.398 
-  -End Testing Accuracy: 0.336
+*Epochs 1-5*<br/> 
+  -Learning Rate: 0.0025 <br/> 
+  -Beginning Loss: 0.064 <br/> 
+  -End Loss: ~0.028 <br/> 
+  -End Training Accuracy: 0.398 <br/> 
+  -End Testing Accuracy: 0.336<br/> 
 
 Loss over epochs (blue=training, orange=validation)
 
 ![1-5 loss](https://user-images.githubusercontent.com/36826929/158667908-ed28fc19-7130-4e4f-abb2-48326a1ad6ae.png)
 
 Epochs 6-35:
-
-Learning Rate: 0.001
-Beginning Loss: 0.028
-End Loss: 0.010
-Training accuracy: 0.724205
-Testing  accuracy: 0.557313
+<br/> 
+Learning Rate: 0.001<br/> 
+Beginning Loss: 0.028<br/> 
+End Loss: 0.010<br/> 
+Training accuracy: 0.724205<br/> 
+Testing  accuracy: 0.557313<br/> 
 
 Loss over epochs (blue=training, orange=validation)
 ![6-35 loss](https://user-images.githubusercontent.com/36826929/158872157-b4ec6d16-de39-4039-9d22-258f046531ae.png)
 
-Epochs 36-52:
+Epochs 36-52:<br/> 
 
-Learning Rate: 0.0005
-Beginning Loss: 0.010
-End Loss: 
-Training accuracy: 0.750170
-Testing  accuracy: 0.757002
+Learning Rate: 0.0005<br/> 
+Beginning Loss: 0.010<br/> 
+End Loss: <br/> 
+Training accuracy: 0.750170<br/> 
+Testing  accuracy: 0.757002<br/> 
 
 Loss over epochs (blue=training, orange=validation)
 ![36-54](https://user-images.githubusercontent.com/36826929/158872176-9dfa0aa6-6bdc-477f-8f38-cb45857c57aa.png)
 
 
 ### Additional Info
+
+The code for this project can be found here: https://github.com/manginoja/455/blob/main/ResNet.ipynb
 
 For this project, the majority of the code was taken from the CNN PyTorch tutorial given by Professor Redmon. This code was mainly just the boilerplate training code along with data augmentation. The code that I implemented was the validation set portion of the training code; using the fastai library to find the optimal learning rate; modifying the data augmentation to match the dataset used; and I had to do research to figure out how to strip the last layer of the resnet50 model. I also wrote the code needed to transform the bird data into usable datasets and dataloaders, along with deriving the number of classes. The rest of the work that went into this project was primarily troubleshooting and then doing training to find the learning rate / decay combination that would yield the best accuracy, along with doing research as to how to prevent overfitting, such as through data normalization and better augmentation.
 
@@ -97,7 +70,4 @@ Joe Redmon's CNN PyTorch tutorial (used for training function and data augmentat
 https://towardsdatascience.com/estimating-optimal-learning-rate-for-a-deep-neural-network-ce32f2556ce0 (used to find the optimal LR using fastai)
 
 https://docs.fast.ai/tutorial.siamese.html
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
 
