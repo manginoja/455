@@ -1,6 +1,6 @@
 ### Summary
 
-This project consists of a bird classification model made for a Kaggle competition.  The model itself is a residual neural network built from a modified ResNet50 model, trained using a variety of machine learning techniques including learning rate annealing, weight decay, and data augmentation.  The dataset that the model was trained and tested on consists of over 38,600 images of 555 different species of birds; the goal of training was to achieve the highest top-1 accuracy on correctly classifying a bird species. The final model was able to achieve a training accuracy of BLANK on 34,700 files, and a testing accuracy of BLANK on 3,860 files.
+This project consists of a bird classification model made for a Kaggle competition.  The model itself is a residual neural network built from a modified ResNet50 model, trained using a variety of machine learning techniques including learning rate annealing, weight decay, and data augmentation.  The dataset that the model was trained and tested on consists of over 38,600 images of 555 different species of birds; the goal of training was to achieve the highest top-1 accuracy on correctly classifying a bird species. The final model was able to achieve a training accuracy of 0.750170 on 30,880 files, and a testing accuracy of 0.757002 on 3,860 files, along with scoring a 0.7400 in the Kaggle competition.
 
 ### Problem Setup
 
@@ -19,16 +19,19 @@ To find the optimal learning rate, I chose to use the fastai Learner class and r
 Learning Rate Suggestion Graph, given by lr_find():
 ![1-5](https://user-images.githubusercontent.com/36826929/158666067-5d6f6eb9-3179-4bc0-9a04-b370771d705c.png)
 
+The final training process had the following results:
+
 *Epochs 1-5*<br/> 
-  -Learning Rate: 0.0025 <br/> 
-  -Beginning Loss: 0.064 <br/> 
-  -End Loss: ~0.028 <br/> 
-  -End Training Accuracy: 0.398 <br/> 
-  -End Testing Accuracy: 0.336<br/> 
+Learning Rate: 0.0025 <br/> 
+Beginning Loss: 0.064 <br/> 
+End Loss: ~0.028 <br/> 
+End Training Accuracy: 0.398 <br/> 
+End Testing Accuracy: 0.336<br/> 
 
 Loss over epochs (blue=training, orange=validation)
 
-![1-5 loss](https://user-images.githubusercontent.com/36826929/158667908-ed28fc19-7130-4e4f-abb2-48326a1ad6ae.png)
+![1-5](https://user-images.githubusercontent.com/36826929/158882416-2e7f0954-1042-485a-998d-ea669e75da93.png)
+
 
 Epochs 6-35:
 <br/> 
@@ -39,7 +42,7 @@ Training accuracy: 0.724205<br/>
 Testing  accuracy: 0.557313<br/> 
 
 Loss over epochs (blue=training, orange=validation)
-![6-35 loss](https://user-images.githubusercontent.com/36826929/158872157-b4ec6d16-de39-4039-9d22-258f046531ae.png)
+![ahhh](https://user-images.githubusercontent.com/36826929/158912442-16f8ebed-ea3e-4043-9327-8bf8bf705a94.png)
 
 Epochs 36-52:<br/> 
 
@@ -54,8 +57,6 @@ Loss over epochs (blue=training, orange=validation)
 
 
 ### Additional Info
-
-The code for this project can be found here: https://github.com/manginoja/455/blob/main/ResNet.ipynb
 
 For this project, the majority of the code was taken from the CNN PyTorch tutorial given by Professor Redmon. This code was mainly just the boilerplate training code along with data augmentation. The code that I implemented was the validation set portion of the training code; using the fastai library to find the optimal learning rate; modifying the data augmentation to match the dataset used; and I had to do research to figure out how to strip the last layer of the resnet50 model. I also wrote the code needed to transform the bird data into usable datasets and dataloaders, along with deriving the number of classes. The rest of the work that went into this project was primarily troubleshooting and then doing training to find the learning rate / decay combination that would yield the best accuracy, along with doing research as to how to prevent overfitting, such as through data normalization and better augmentation.
 
