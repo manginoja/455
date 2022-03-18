@@ -72,3 +72,10 @@ https://towardsdatascience.com/estimating-optimal-learning-rate-for-a-deep-neura
 
 https://docs.fast.ai/tutorial.siamese.html
 
+### Video
+
+
+
+https://user-images.githubusercontent.com/36826929/158913674-9e515cef-cd77-4058-9980-f0b8f6f5502d.mp4
+
+
