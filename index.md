@@ -48,20 +48,12 @@ Epochs 36-52:<br/>
 
 Learning Rate: 0.0005<br/> 
 Beginning Loss: 0.010<br/> 
-End Loss: <br/> 
+End Loss: 0.0070 <br/> 
 Training accuracy: 0.750170<br/> 
 Testing  accuracy: 0.757002<br/> 
 
 Loss over epochs (blue=training, orange=validation)
 ![36-54](https://user-images.githubusercontent.com/36826929/158872176-9dfa0aa6-6bdc-477f-8f38-cb45857c57aa.png)
-
-
-### Discussion
-This project encountered a variety of issues. For the first few days working on the project, the training accuracy was hitting 99%, however the testing accuracy remained at 0.0002. This was very unusual, and I tried to augment many different things in my code to make it work. It wasn't until I had an "aha" moment that the test/ folder from Kaggle was only for the competition, not testing my data.  After this, I changed my technique to instead split the data in the train/ folder into training and testing sets, which worked very well. The other main problem I had was not calling net.eval() or net.train() in the first few runs, which ate up a lot of my training time. After I fixed this, everything ran smoothly and I was able to get the model to where it needed to be.
-
-In the future, I think that there are a lot of improvements that could be made. I would first and foremost just give this model more time to train.  Preferably, I would train it for 90 more epochs, halving the learning rate each time.  I would also like to experiment more with changing how the data augmentation occurs, which resnet model I use, what loss function is best, and what decay is optimal. Of course, there are a lot of different permutations of options here, meaning this would take quite some time to test. However, I haven't achieved the optimal performance of this model, and I think trying out different combinations of ways to prevent overfitting could be quite beneficial, especially considering that this model has the ability to get 99% training accuracy. 
-
-I believe the most novel approach I took with this model was using the fastai framework to find the optimal first learning rate. I found that the learning rates it suggested afterwards weren't giving me the performance I was looking for (they would take way too much time to train, even if they might have given better results).  However, I think that using this approach allowed me to quickly find a good "jumping off point" for training, where I could then set a reasonable, educated learning rate schedule afterwards.  
 
 
 ### Additional Info
@@ -79,11 +71,4 @@ Joe Redmon's CNN PyTorch tutorial (used for training function and data augmentat
 https://towardsdatascience.com/estimating-optimal-learning-rate-for-a-deep-neural-network-ce32f2556ce0 (used to find the optimal LR using fastai)
 
 https://docs.fast.ai/tutorial.siamese.html
-
-### Video
-
-
-
-https://user-images.githubusercontent.com/36826929/158913674-9e515cef-cd77-4058-9980-f0b8f6f5502d.mp4
-
 
